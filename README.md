@@ -2,7 +2,4 @@
 
 ## Lab 1 - Partitioning & S3
 
-In this lab I am trying to show that how partitioning should be implemented using a list of file objects. The assumption is that there are files that we ingest from an external source , each of size 150 MB. By looping through the files, we try to dynamically name the files using Hive-style partition string ( partition_name=value /filename). Name of the partition is the column we want to apply the partition algorithm to. Furthermore, I will try to   rove why we formatted the strings this way can speed up the search engine like Amazon Athena query.
-
-Example:
-year=2023/record_01.parquet
+How does Hive-style partitioning actually work? In this lab, I take 150 MB raw data files and dynamically map them into a partitioned directory structure (key=value). I’ll walk through the logic of assigning partition names based on specific columns and prove why this formatting is the 'secret sauce' for high-speed queries in Amazon Athena.
